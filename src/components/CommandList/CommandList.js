@@ -1,15 +1,22 @@
-const CommandList = ({ commands, title }) => {
+import { Wrapper, Content } from "./CommandList.styles";
+
+const CommandList = ({ commands, head }) => {
 
     return (
-        <div className="blog-list">
-            <h2>{title} </h2>
+
+
+        <div className="command-list">
+            <h2>{head}</h2>
             {commands.map((cmd) => (
-                <div className="blog-preview" /*MUST HAVE*/ key={cmd.id}> {/*key is used as an identifier(PK) */}
-                    <p>{cmd.command}</p>
-                    <p>{cmd.short_text}</p>
-                    <p>{cmd.explanation}</p>
-                    <p>{cmd.example}</p>
-                </div>
+                <Wrapper>
+                    <div className="command-listed" key={cmd.id}>
+                        <h3>{cmd.command} -{cmd.short_text}</h3>
+                        <Content>
+                            <p>{cmd.explanation}</p>
+                            <code><p>{cmd.example}</p></code>
+                        </Content>
+                    </div>
+                </Wrapper>
             ))}
         </div>
     );

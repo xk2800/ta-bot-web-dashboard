@@ -2,15 +2,14 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
     padding: 20px;
-    display: flex;
+    position: relative;
     align-items: center;
-    max-width: 600px;
     border-bottom: 1px solid #f2f2f2;
     margin: 0 auto;
 
     h1{
         display: right;
-        color: #0C1F2D;
+        color: #ffff;
     }
 
     .links{
@@ -21,19 +20,23 @@ export const Wrapper = styled.div`
         margin-left: 16px;
         text-decoration: none;
         padding: 6px;
+        color: #ffff;
     }
 
     a:hover{
-        color: #0C1F2D;
+        color: grey;
     }
-
 
 `;
 
-export const Tags = styled.div``;
+export const Tags = styled.div`
+    .navbar{
+        display: flex;
+        max-width: 600px;
+    }
+`;
 
 export const LogoImg = styled.img`
-    display: flex;
     height: 100px;
 
 `;

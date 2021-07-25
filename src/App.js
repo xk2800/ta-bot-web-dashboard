@@ -4,6 +4,7 @@ import './App.css';
 //components
 import Navbar from './components/Navbar/Navbar';
 import Home from './Home';
+import {GlobalStyle} from './GlobalStyles';
 
 function App() {
     return (
@@ -15,6 +16,7 @@ function App() {
                         <Home />
                     </Route>
                 </Switch>
+                <GlobalStyle />
             </div>
         </Router>
     );

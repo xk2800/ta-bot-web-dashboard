@@ -31,8 +31,8 @@ export const Wrapper = styled.div`
 
 export const Tags = styled.div`
     .navbar{
-        display: flex;
-        max-width: 600px;
+        /* display: flex; */
+        /* max-width: 600px; */
     }
 `;
 

@@ -16,6 +16,9 @@ export const GlobalStyle = createGlobalStyle`
         background: #0C1F2D;
         box-sizing: border-box;
         font-family: 'Sora', san-sarif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
     }
 
 `;

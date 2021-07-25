@@ -14,6 +14,7 @@ const Navbar = () => {
                             <LogoImg src={TAlogo} alt="Takeaway Table Logo" />
                         </Link>
                         <h1>Takeaway Bot</h1>
+                        <br />
                         <Link to='/all'>All</Link>
                         <Link to='/general'>General</Link>
                         <Link to='/live_stats'>Live Stats</Link>

@@ -16,7 +16,7 @@
         },
         {
             "command": "-jokes",
-            "short-text": "Get random joke",
+            "short_text": "Get random joke",
             "explanation": "Get random joke from bot",
             "example": "-jokes <english>",
             "id": 3

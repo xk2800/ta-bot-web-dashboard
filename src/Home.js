@@ -2,7 +2,6 @@
 //components
 import useFetch from "./hooks/useFetch";
 import CommandList from './components/CommandList/CommandList';
-import { useState } from "react";
 //import Accordion from "./components/Accordion/Accordion";
 
 const Home = () => {

@@ -2,14 +2,14 @@
     "commands": [
         {
             "command": "-help",
-            "short-text": "Full Command Release",
+            "short_text": "Full Command Release",
             "explanation": "Expose full command available for bot",
             "example": "-help",
             "id": 1
         },
         {
             "command": "-happy",
-            "short-text": "Happy Text",
+            "short_text": "Happy Text",
             "explanation": "Text Happy",
             "example": "-happy <thing>",
             "id": 2

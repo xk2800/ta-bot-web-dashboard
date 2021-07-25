@@ -10,10 +10,11 @@ const CommandList = ({ commands, head }) => {
             {commands.map((cmd) => (
                 <Wrapper>
                     <div className="command-listed" key={cmd.id}>
-                        <h3>{cmd.command} -{cmd.short_text}</h3>
+                        <h3><code>{cmd.command}</code> <span className="short_text"> - {cmd.short_text}</span></h3>
                         <Content>
+                            <p>Usage:</p>
                             <p>{cmd.explanation}</p>
-                            <code><p>{cmd.example}</p></code>
+                            <code><p className='code'>{cmd.example}</p></code>
                         </Content>
                     </div>
                 </Wrapper>

@@ -15,8 +15,8 @@ const Navbar = () => {
                         </Link>
                         <h1>Takeaway Bot</h1>
                         <Link to='/all'>All</Link>
-                        <Link to='/General'>General</Link>
-                        <Link to='/Live Stats'>Live Stats</Link>
+                        <Link to='/general'>General</Link>
+                        <Link to='/live_stats'>Live Stats</Link>
                     </div>
                 </nav>
             </Tags>

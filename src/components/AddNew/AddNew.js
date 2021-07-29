@@ -1,106 +1,114 @@
 import { useState } from "react";
-import axios from 'axios';
+import axios from "axios";
 
 import { Wrapper } from "./AddNew.styles";
 
 const AddNew = () => {
+  const [command, setCommmand] = useState("");
+  const [shorttext, setShortText] = useState("");
+  const [explanation, setExplanation] = useState("");
+  const [example, setExample] = useState("");
+  const [exampleTwo, setExampleTwo] = useState("");
+  const [pending, setPending] = useState(false);
 
-    const [command, setCommmand] = useState('');
-    const [shorttext, setShortText] = useState('');
-    const [explanation, setExplanation] = useState('');
-    const [example, setExample] = useState('');
-    const [exampleTwo, setExampleTwo] = useState('');
-    const [pending, setPending] = useState(false);
+  const handleSubmit = (e) => {
+    //e.preventDefault();
 
-    const handleSubmit = (e) => {
+    const cmds = { command, shorttext, explanation, example, exampleTwo };
 
-        //e.preventDefault();
+    setPending(true);
 
-        const cmds = { command, shorttext, explanation, example, exampleTwo };
+    //setTimeout(() => {
+    console.log(cmds);
 
-        setPending(true);
+    fetch("http://localhost:5000/3/add", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(cmds),
+    })
+      .then(() => {
+        setPending(false);
+        console.log("new command added");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
 
-        //setTimeout(() => {
-        console.log(cmds);
+    //}, 1000);
+  };
 
-        fetch('http://localhost:4006/commands', {
+  return (
+    <div className="add">
+      <h2>Add New Command To Dashboard</h2>
+      <h6>
+        *Note: This only adds command list to web dashboard, not Discord Bot
+      </h6>
+      <br />
+      <Wrapper>
+        <form>
+          <label htmlFor="commands">Command:</label>
+          <input
+            type="text"
+            required
+            id="commands"
+            value={command}
+            onChange={(e) => setCommmand(e.target.value)}
+          />
+          <br />
 
-            method: 'POST',
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(cmds)
+          <label htmlFor="shorttext">Short text/Description:</label>
+          <input
+            type="text"
+            required
+            id="shorttext"
+            value={shorttext}
+            onChange={(e) => setShortText(e.target.value)}
+          />
+          <br />
 
-        }).then(() => {
-            setPending(false);
-            console.log('new command added');
-        });
-        // .catch(error => {
-        //     console.log(error);
-        // });
+          <label htmlFor="explanation">Command explanation:</label>
+          <textarea
+            required
+            id="explanation"
+            value={explanation}
+            onChange={(e) => setExplanation(e.target.value)}
+          ></textarea>
+          <br />
 
+          <label htmlFor="example">Code Example:</label>
+          <input
+            type="text"
+            required
+            id="example"
+            value={example}
+            onChange={(e) => setExample(e.target.value)}
+          />
+          <br />
 
-        //}, 1000);
-    };
+          <label htmlFor="example">Code Example 2:</label>
+          <input
+            type="text"
+            id="example"
+            value={exampleTwo}
+            onChange={(e) => setExampleTwo(e.target.value)}
+          />
+          <br />
 
-    return (
-
-        <div className="add">
-            <h2>Add New Command To Dashboard</h2>
-            <h6>*Note: This only adds command list to web dashboard, not Discord Bot</h6>
-            <br />
-            <Wrapper>
-                <form onSubmit={handleSubmit}>
-                    <label htmlFor="commands">Command:</label>
-                    <input
-                        type="text"
-                        required
-                        id="commands"
-                        value={command}
-                        onChange={(e) => setCommmand(e.target.value)}
-                    /><br />
-
-                    <label htmlFor="shorttext">Short text/Description:</label>
-                    <input
-                        type="text"
-                        required
-                        id="shorttext"
-                        value={shorttext}
-                        onChange={(e) => setShortText(e.target.value)}
-                    /><br />
-
-                    <label htmlFor="explanation">Command explanation:</label>
-                    <textarea
-                        required
-                        id="explanation"
-                        value={explanation}
-                        onChange={(e) => setExplanation(e.target.value)}
-                    ></textarea><br />
-
-                    <label htmlFor="example">Code Example:</label>
-                    <input
-                        type="text"
-                        required
-                        id="example"
-                        value={example}
-                        onChange={(e) => setExample(e.target.value)}
-                    /><br />
-
-                    <label htmlFor="example">Code Example 2:</label>
-                    <input
-                        type="text"
-                        id="example"
-                        value={exampleTwo}
-                        onChange={(e) => setExampleTwo(e.target.value)}
-                    /><br />
-
-                    <button>Add Command</button>
-
-                </form>
-            </Wrapper>
-        </div>
-
-
-
-    );
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              handleSubmit(e);
+            }}
+          >
+            Add Command
+          </button>
+        </form>
+      </Wrapper>
+    </div>
+  );
 };
 
 export default AddNew;

@@ -1,7 +1,8 @@
-//components
-import useFetch from "./hooks/useFetch";
+// components
 import CommandList from "./components/CommandList/CommandList";
-//import Accordion from "./components/Accordion/Accordion";
+import useFetch from "./hooks/useFetch";
+
+// import Accordion from "./components/Accordion/Accordion";
 
 const Home = () => {
   /*const [commands, setCommands] = useState([{

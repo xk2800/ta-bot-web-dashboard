@@ -10,26 +10,26 @@ export const Wrapper = styled.div`
 
     h3{
         font-size: 20px;
-        color: #BC2B29;
+        color: var(--redColor);
         margin-bottom: 8px;
     }
 
     .short_text{
-        color: #ffff;
+        color: var(--white);
         font-weight: 100;
     }
 
 `;
 
 export const Content = styled.div`
-    color: #ffff;
+    color: var(--white);
     
     p{
         margin: 10px 0;
     }
 
     .code{
-        background: #1a425e;
+        background: var(--blueColor);
         padding: 5px 0;
         padding-left: 5px;
         border-radius: 10px;

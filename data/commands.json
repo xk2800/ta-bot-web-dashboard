@@ -1,25 +1,34 @@
 {
-    "commands": [
-        {
-            "command": "-help",
-            "short_text": "Full Command Release",
-            "explanation": "Expose full command available for bot",
-            "example": "-help",
-            "id": 1
-        },
-        {
-            "command": "-happy",
-            "short_text": "Happy Text",
-            "explanation": "Text Happy",
-            "example": "-happy <thing>",
-            "id": 2
-        },
-        {
-            "command": "-jokes",
-            "short_text": "Get random joke",
-            "explanation": "Get random joke from bot",
-            "example": "-jokes <english>",
-            "id": 3
-        }
-    ]
+  "commands": [
+    {
+      "command": "-help",
+      "short_text": "Full Command Release",
+      "explanation": "Expose full command available for bot",
+      "example": "-help",
+      "id": 1
+    },
+    {
+      "command": "help ",
+      "shorttext": "Help On Any Command",
+      "explanation": "Explanation of each command entered",
+      "example": "~help all_of_steam",
+      "exampleTwo": "~help random",
+      "id": 2
+    },
+    {
+      "command": "~time",
+      "shorttext": "Time of any country",
+      "explanation": "Get the time of any country on Earth",
+      "example": "~time malaysia",
+      "exampleTwo": "~time Spain",
+      "id": 3
+    },
+    {
+      "command": "all_of_steam",
+      "shorttext": "Cost to buy every steam game",
+      "explanation": "Get the total cost to buy every steam game available",
+      "example": "~all_of_steam",
+      "id": 4
+    }
+  ]
 }

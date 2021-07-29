@@ -1,11 +1,14 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 
-//components
+// global styles
+import { GlobalStyle } from './GlobalStyles';
+
+// components
 import Navbar from './components/Navbar/Navbar';
 import Home from './Home';
 import NotFound from './components/NotFound/NotFound';
-import { GlobalStyle } from './GlobalStyles';
+import AddNew from './components/AddNew/AddNew';
 
 
 function App() {
@@ -30,6 +33,12 @@ function App() {
 
                     <Route path='/live_stats'>
                         <Navbar />
+                    </Route>
+
+                    <Route path='/newcmd'>
+                        <Navbar />
+                        <br />
+                        <AddNew />
                     </Route>
 
                     <Route path='*'>

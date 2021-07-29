@@ -1,5 +1,6 @@
 {
   "name": "ta-bot-web-dashboard",
+  "homepage": "https://takeawaybot.jes.gg/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

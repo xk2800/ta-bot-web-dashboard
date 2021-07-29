@@ -18,7 +18,7 @@ const CommandList = ({ commands, head }) => {
             <div className="command-listed" key={cmd.id}>
               <h3>
                 <code>{cmd.command}</code>{" "}
-                <span className="short_text"> - {cmd.short_text}</span>
+                <span className="short_text"> - {cmd.shorttext}</span>
               </h3>
               <Content>
                 <p>Usage:</p>

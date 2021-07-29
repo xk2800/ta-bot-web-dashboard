@@ -16,7 +16,7 @@ const Home = () => {
     data: commands,
     isLoading,
     error,
-  } = useFetch("https://ta-bot-web-dashboard-api.herokuapp.com/commands/v1");
+  } = useFetch("https://ta-bot-web-api.herokuapp.com/commands/v1");
 
   return (
     // <h2>Welcome to the Takeaway Table's Bot Command List</h2>
